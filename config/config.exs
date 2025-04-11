@@ -3,20 +3,17 @@ import Config
 config :tableau, :reloader,
   patterns: [
     ~r"^lib/.*.ex",
-    ~r"^(_posts|_pages)/.*.md",~r"^extra/.*.(css|js)"
+    ~r"^(_posts|_pages)/.*.md",
+    ~r"^extra/.*.(css|js)"
   ]
 
 config :web_dev_utils, :reload_log, true
 # uncomment this if you use something like ngrok
 # config :web_dev_utils, :reload_url, "'wss://' + location.host + '/ws'"
 
-
 config :temple,
   engine: EEx.SmartEngine,
   attributes: {Temple, :attributes}
-
-
-
 
 config :tableau, :config,
   url: "http://localhost:4999",
@@ -32,6 +29,7 @@ config :tableau, Tableau.PageExtension, enabled: true
 config :tableau, Tableau.PostExtension, enabled: true, future: true
 config :tableau, Tableau.DataExtension, enabled: true
 config :tableau, Tableau.SitemapExtension, enabled: true
+config :tableau, Tableau.TagExtension, enabled: false
 
 config :tableau, Tableau.RSSExtension,
   enabled: true,
@@ -41,4 +39,3 @@ config :tableau, Tableau.RSSExtension,
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 
 import_config "#{Mix.env()}.exs"
-
