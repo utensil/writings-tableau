@@ -27,3 +27,4 @@ tableau_new-*.tar
 
 # Aider related files
 .aider*
+_site
