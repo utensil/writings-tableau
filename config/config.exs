@@ -26,7 +26,8 @@ config :tableau, :config,
   ]
 
 config :tableau, Tableau.PageExtension, enabled: true
-config :tableau, Tableau.PostExtension, enabled: true, future: true
+config :tableau, Tableau.PostExtension, enabled: false
+config :tableau, Writings.PostExtension, enabled: true, future: true, layout: Writings.PostLayout #, dir: "." #, permalink: "/blog/:year-:month-:day-:title"
 config :tableau, Tableau.DataExtension, enabled: true
 config :tableau, Tableau.SitemapExtension, enabled: true
 config :tableau, Tableau.TagExtension, enabled: false
@@ -35,6 +36,8 @@ config :tableau, Tableau.RSSExtension,
   enabled: true,
   title: "writings",
   description: "My beautiful website"
+
+# config :tableau, Writings.Metadata, enabled: true
 
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 

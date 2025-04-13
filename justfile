@@ -20,3 +20,6 @@ mock:
 
 dev:
   mix tableau.server
+
+build:
+  mix tableau.build
