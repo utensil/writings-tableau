@@ -16,7 +16,7 @@ config :temple,
   attributes: {Temple, :attributes}
 
 config :tableau, :config,
-  url: "http://localhost:4999",
+  url: "http://localhost:4999/writings/",
   markdown: [
     mdex: [
       extension: [table: true, header_ids: "", tasklist: true, strikethrough: true],
@@ -27,7 +27,7 @@ config :tableau, :config,
 
 config :tableau, Tableau.PageExtension, enabled: true
 config :tableau, Tableau.PostExtension, enabled: false
-config :tableau, Writings.PostExtension, enabled: true, future: true, layout: Writings.PostLayout #, dir: "." #, permalink: "/blog/:year-:month-:day-:title"
+config :tableau, Writings.PostExtension, enabled: true, future: true, layout: Writings.PostLayout, dir: "_posts", permalink: "/writings/:year/:month/:day/:filebasename"
 config :tableau, Tableau.DataExtension, enabled: true
 config :tableau, Tableau.SitemapExtension, enabled: true
 config :tableau, Tableau.TagExtension, enabled: false

@@ -156,6 +156,8 @@ defmodule Writings.PostExtension do
     |> Map.put(:__tableau_post_extension__, true)
     |> Map.put(:body, body)
     |> Map.put(:file, filename)
+    # filebasename is the filename by Path.basename then remove extension then remove the first 11 characters (the date and -)
+    |> Map.put(:filebasename, Path.basename(filename) |> Path.rootname() |> String.slice(11..-1//1))
     |> Map.put(:layout, Module.concat([attrs[:layout] || posts_config.layout]))
     |> Map.put(:date, DateTimeParser.parse_datetime!(attrs[:date] || "2023-01-01", assume_time: true, assume_utc: true))
     |> Common.build_permalink(posts_config)
