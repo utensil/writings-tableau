@@ -1,5 +1,7 @@
 # writings
 
+An attempt to migrate my writings to [Tableau, a static site generator for Elixir](https://github.com/elixir-tools/tableau). It is now basically archived.
+
 ## Getting Started
 
 Once you bootstrap and enter your project, fetch your dependencies and start the build server. The server is available at http://localhost:4999
